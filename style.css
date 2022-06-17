@@ -72,25 +72,25 @@ body {
     width: inherit;
     height: 100px;
     color: var(--eggshell);
-
 }
 
 .top-screen {
     display: flex;
-    height: 40%;
-    margin: 10px 10px 0px 10px;
+    min-height: 40%;
+    margin: 10px 10px 0 10px;
     justify-content: right;
     align-items: flex-end;
 }
 
 .bot-screen {
     display: flex;
-    height: 60%;
-    margin: 10px;
+    min-height: 60%;
+    margin: 0px 10px 0 10px;
     font-size: 40px;
     justify-content: right;
     align-items: flex-end;
 }
+
 
 .buttons {
     display: grid;
