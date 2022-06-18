@@ -20,7 +20,6 @@ buttons.forEach(function (button) {
             button.addEventListener('click', window[button.id]);
         }
         stateMachine(e.target.innerText);
-        console.log(state)
     });
 });
     
@@ -141,7 +140,7 @@ function appendBottomDisplay(input) {
 
 function updateBottomDisplay(input) {
     bottomDisplay.innerText = roundResult(parseFloat(input));
-
+    fontSizeAdjuster();
 }
 function shiftDisplay(input, final) {
     if (final) {
@@ -151,9 +150,9 @@ function shiftDisplay(input, final) {
     topDisplay.innerText = bottomDisplay.innerText + " " + input;
 }
 function fontSizeAdjuster(){
-    var asdf = Number(bottomDisplay.style.fontSize.substring(0,2))
+    var fontSize = Number(bottomDisplay.style.fontSize.substring(0,2))
     if(bottomDisplay.innerText.length > 9){
-        bottomDisplay.style.fontSize = (asdf - 1).toString() + "px";
+        bottomDisplay.style.fontSize = (fontSize - 1).toString() + "px";
     }else{
         bottomDisplay.style.fontSize = "40px"
     }
@@ -234,4 +233,5 @@ function isOperator(input) {
 function isNonZero(input) {
     if (10 > input && input > 0) return true;
 }
+
 
