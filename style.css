@@ -86,7 +86,7 @@ body {
     display: flex;
     min-height: 60%;
     margin: 0px 10px 0 10px;
-    font-size: 40px;
+    font-size: 50px;
     justify-content: right;
     align-items: flex-end;
 }

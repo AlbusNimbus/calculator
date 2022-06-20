@@ -150,20 +150,19 @@ function shiftDisplay(input, final) {
     topDisplay.innerText = bottomDisplay.innerText + " " + input;
 }
 function fontSizeAdjuster(){
-    var fontSize = Number(bottomDisplay.style.fontSize.substring(0,2))
-    if(bottomDisplay.innerText.length > 9){
-        bottomDisplay.style.fontSize = (fontSize - 1).toString() + "px";
-    }else{
-        bottomDisplay.style.fontSize = "40px"
-    }
+    bottomDisplay.style.fontSize = Math.min(50, 450 / bottomDisplay.innerText.length) + "px";
+    return
 }
 //Special buttons
 function sign() {
     if (bottomDisplay.innerText[0] === "-") {
         bottomDisplay.innerText = bottomDisplay.innerText.substring(1,)
+        fontSizeAdjuster()
         return
     }
     bottomDisplay.innerText = "-" + bottomDisplay.innerText
+    fontSizeAdjuster()
+
 }
 function clear() {
     bottomDisplay.innerText = "0"
@@ -173,13 +172,15 @@ function clear() {
     operator = "";
     result = null;
     state = "start";
-
+    fontSizeAdjuster()
 }
 function backspace() {
     bottomDisplay.innerText = bottomDisplay.innerText.substring(0, bottomDisplay.innerText.length - 1)
     if (bottomDisplay.innerText === "") {
         bottomDisplay.innerText += "0"
     }
+    fontSizeAdjuster()
+
 }
 
 
@@ -218,6 +219,8 @@ function clearBottomDisplay() {
 function clearentry() {
     bottomDisplay.innerText = "0"
     operator = "";
+    fontSizeAdjuster()
+
 }
 function updateOperator(input) {
     topDisplay.innerText = topDisplay.innerText.substring(0, topDisplay.innerText.length - 1);
