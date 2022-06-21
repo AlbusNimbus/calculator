@@ -39,8 +39,8 @@ function stateMachine(input) {
             return
         }
 
-    }
-    if (state === "accumulateDigits") {
+    } 
+   if (state === "accumulateDigits") {
         if (!isNaN(input) || input === ".") {
             appendBottomDisplay(input);
         }
@@ -150,6 +150,7 @@ function shiftDisplay(input, final) {
     topDisplay.innerText = bottomDisplay.innerText + " " + input;
 }
 function fontSizeAdjuster(){
+    topDisplay.style.fontSize = Math.min(20, 450 / topDisplay.innerText.length) + "px";
     bottomDisplay.style.fontSize = Math.min(50, 450 / bottomDisplay.innerText.length) + "px";
     return
 }

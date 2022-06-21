@@ -77,9 +77,11 @@ body {
 .top-screen {
     display: flex;
     min-height: 40%;
+    font-size: 20px;
     margin: 10px 10px 0 10px;
     justify-content: right;
     align-items: flex-end;
+    white-space: nowrap;
 }
 
 .bot-screen {
